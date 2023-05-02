@@ -1,0 +1,7 @@
+panda
+numpy
+openai
+tesseract
+pytesseract 
+opencv-python
+-e .
