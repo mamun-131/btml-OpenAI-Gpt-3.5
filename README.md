@@ -1,1 +1,1 @@
-## My Machine Learning Project Package
+## Machine Learning Project Package

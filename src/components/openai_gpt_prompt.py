@@ -52,7 +52,7 @@ class OpenAIGptPrompt:
             temperature=0,
         )
         data = json.loads(str(response))
-        #print(data['choices'][0]['message']['content'])
+        print(data['choices'][0]['message']['content'])
         return data['choices'][0]['message']['content']
         
 # instruction ="You are a helpful, pattern-following and information indentifying assistant."

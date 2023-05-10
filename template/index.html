@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+   <body>
+  <h1>GPT File Uploader</h1>
+
+  <form action = "http://localhost:5000/uploader" method = "POST" 
+  enctype = "multipart/form-data">
+  
+  <h4>Upload file to generate message:</h4>
+  <input type = "file" name = "file" />
+
+  <h4>Select the message types:</h4>
+  <input type="checkbox" id="Romantic" name="msg_type" value="Romantic" checked>
+  <label for="vehicle1"> Romantic</label><br>
+  <input type="checkbox" id="Friendly" name="msg_type" value="Friendly">
+  <label for="vehicle2"> Friendly</label><br>
+  <input type="checkbox" id="Funny" name="msg_type" value="Funny">
+  <label for="vehicle3"> Funny</label><br><br>
+  <input type = "submit"/>
+</form>
+
+   </body>
+</html>

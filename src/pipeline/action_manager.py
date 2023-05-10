@@ -43,8 +43,9 @@ def info_prompt(callback):
     return info_prompt_responses
 
 # write a pragraph based on extracted info
-def chatgpt_prompt(callback):
-    input_text = "write a romantic paragraph to impress the person based on information from below python dictionary. If value is N/A or Unknown ignore those."
+def chatgpt_prompt(prompt_txt, callback):
+    #input_text = "write a romantic paragraph to impress the person based on information from below python dictionary. If value is N/A or Unknown ignore those."
+    input_text = prompt_txt # "write 3 alternative paragraph with 3 alternative intents to impress the person based on information from below intents and python dictionary. If value is N/A or Unknown ignore those. Intents: 1. Romantic 2. Funny 3. Friendly Python Directory:"
     input_text = input_text + "\"" + callback + "\""
     #print(input_text)
     chatgpt_prompt = OpenAIGptPrompt()
@@ -61,15 +62,55 @@ def get_image_file_list(userid,tempt_folder_name):
 class ActionResult:
     def __init__(self):
         self
-    def final_action_result(self,userid,tempt_folder_name):
+    def final_action_result(self,userid,prompt, tempt_folder_name):
         files = get_image_file_list(userid,tempt_folder_name)
-        return chatgpt_prompt(info_prompt(ocr_action(files)))
+        return chatgpt_prompt(prompt, info_prompt(ocr_action(files)))
 
 
 
 
 
 
+
+"""
+write 3 alternative paragraph with 3 alternative intents to impress the person based on information from below intents and python dictionary. If value is N/A or Unknown ignore those.
+
+Intents:
+1. Romantic
+2. Funny
+3. Friendly
+
+Python Directory:
+
+Sharjeel = {
+    "Name": "Sharjeel",
+    "Age": 20,
+    "Gender": "Man",
+    "Height": 162,
+    "Marital Status": "Don't Know Yet",
+    "Description": {
+        "Basics": {
+            "In College": "2%",
+            "Smoke": "Never",
+            "Drink": "Never"
+        },
+        "Interests": {
+            "Art": True,
+            "Writing": True,
+            "Fantasy": True,
+            "Coffee": True
+        },
+        "Location": {
+            "City": "Multan",
+            "Province": "Punjab",
+            "Distance from Lahore": "51 km"
+        },
+        "Recommendation": "Recommend to a friend"
+    }
+}
+
+
+"""
 
 
 
